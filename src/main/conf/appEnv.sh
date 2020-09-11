@@ -1,7 +1,7 @@
 # File to be sourced in to application runner
 # Allow for customisations here (allows application runner to be effectively read-only)
 
-MAIN_CLASS=org.bitrepository.reference.TemplateMain
+MAIN_CLASS=org.bitrepository.reference.ClientTrainingMain
 APP_CONFIG=.
 
 #Optional parameter to override default JAVA_OPTS
