@@ -63,7 +63,7 @@ public class ClientTrainingMain {
             try {
                 switch(action) {
                 case GET:
-                    ca = new GetAction();
+                    ca = new GetAction(cmd, BitmagUtils.getFileClient());
                     break;
                 case PUT:
                     ca = new PutAction(cmd, BitmagUtils.getPutFileClient());
