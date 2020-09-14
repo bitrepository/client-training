@@ -21,8 +21,8 @@ Before running the files `RepositorySettings.xml`, `ReferenceSettings.xml` and `
 ## Tasks
 
 1. Implement the PutFile action. Focus points:
-  * Upload of file to FileExchange
   * Calculation of checksum
+  * Upload of file to FileExchange, but *not* before the identification phase is done 
   * Handling of returned events (failures, partial results, retry)
   * Cleanup after operation
 
