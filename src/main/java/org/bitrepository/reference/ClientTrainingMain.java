@@ -69,7 +69,7 @@ public class ClientTrainingMain {
                     ca = new PutAction();
                     break;
                 case GETFILEIDS: 
-                    ca = new GetFileIDsAction();
+                    ca = new GetFileIDsAction(cmd, BitmagUtils.getFileIDsClient());
                     break;
                 case GETCHECKSUMS: 
                     ca = new GetChecksumsAction(cmd, BitmagUtils.getChecksumsClient());
