@@ -75,7 +75,7 @@ public class PutAction implements ClientAction {
     private URL buildFileExchangeUrl(String checksum) throws MalformedURLException {
         URL baseurl = BitmagUtils.getFileExchangeBaseURL();
         return new URL(baseurl.toString() + checksum);
-   }
+    }
     
     
 }
