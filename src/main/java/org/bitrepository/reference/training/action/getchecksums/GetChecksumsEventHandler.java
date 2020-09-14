@@ -34,6 +34,7 @@ public class GetChecksumsEventHandler implements EventHandler {
     
     @Override
     public void handleEvent(OperationEvent event) {
+        log.info("Got event from client: {}", event.getEventType());
         switch(event.getEventType()) {
         case COMPONENT_COMPLETE:
             log.debug("Got COMPONENT_COMPLETE event {}", event);
