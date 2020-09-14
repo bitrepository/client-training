@@ -48,11 +48,11 @@ public class GetChecksumsEventHandler implements EventHandler {
                 }
             }
             case COMPLETE:
-                log.info("Finished get file for file '{}'", event.getFileID());
+                log.info("Finished get checksum for file '{}'", event.getFileID());
                 finish();
                 break;
             case FAILED:
-                log.warn("Failed get file for file '{}'", event.getFileID());
+                log.warn("Failed get checksum for file '{}'", event.getFileID());
                 failed = true;
                 finish();
                 break;
@@ -90,7 +90,7 @@ public class GetChecksumsEventHandler implements EventHandler {
     public void waitForFinish() throws InterruptedException {
         synchronized (finishLock) {
             if(finished == false) {
-                log.trace("Thread waiting for put client to finish");
+                log.trace("Thread waiting for client to finish");
                 finishLock.wait();
             }
             log.trace("Client have indicated it's finished.");
@@ -110,7 +110,7 @@ public class GetChecksumsEventHandler implements EventHandler {
     /**
      * Method to determine if the operation was successful.
      * The method should not be called prior to a call to {@link #waitForFinish()} have returned. 
-     * @return true if the operation succeded, otherwise false. 
+     * @return true if the operation succeeded, otherwise false. 
      */
     public boolean hasFailed() {
         return failed;
