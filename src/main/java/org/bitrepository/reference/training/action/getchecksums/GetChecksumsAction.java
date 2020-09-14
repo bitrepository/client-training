@@ -31,7 +31,7 @@ public class GetChecksumsAction implements ClientAction {
     public GetChecksumsAction(CommandLine cmd, GetChecksumsClient checksumsClient) {
         collectionID = cmd.getOptionValue(CliOptions.COLLECTION_OPT);
         pillarID = cmd.getOptionValue(CliOptions.PILLAR_OPT);
-        fileID = cmd.getOptionValue(CliOptions.FILE_OPT);
+        fileID = cmd.getOptionValue(CliOptions.FILEID_OPT);
         this.checksumsClient = checksumsClient;
     }
 

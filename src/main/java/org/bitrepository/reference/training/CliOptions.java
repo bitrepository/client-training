@@ -11,6 +11,7 @@ public class CliOptions {
     public final static String ACTION_OPT = "a";
     public final static String COLLECTION_OPT = "c";
     public final static String FILE_OPT = "f";
+    public final static String FILEID_OPT = "i";
     public final static String PILLAR_OPT = "p";
     public final static String HELP_OPT = "h";
     
@@ -19,7 +20,9 @@ public class CliOptions {
     private final static Option collectionOption 
         = new Option(COLLECTION_OPT, "collection", true, "Collection to work on");
     private final static Option fileOption 
-        = new Option(FILE_OPT, "file", true, "File to be processed to work on");
+        = new Option(FILE_OPT, "file", true, "File to work on");
+    private final static Option fileIdOption 
+        = new Option(FILEID_OPT, "fileID", true, "FileID to be processed to work on");
     private final static Option pillarOption 
         = new Option(PILLAR_OPT, "pillar", true, "Pillar to perform the action on");
     private final static Option helpOption = new Option(HELP_OPT, "help", false, "Prints help and usage information");
@@ -81,10 +84,12 @@ public class CliOptions {
         switch(action) {
         case PUT:
             options.addOption(makeOptionRequired(collectionOption));
+            options.addOption(makeOptionRequired(fileIdOption));
             options.addOption(makeOptionRequired(fileOption));
             break;
         case GET: 
             options.addOption(makeOptionRequired(collectionOption));
+            options.addOption(makeOptionRequired(fileIdOption));
             options.addOption(makeOptionRequired(fileOption));
             break;
         case GETFILEIDS: 
@@ -94,7 +99,7 @@ public class CliOptions {
         case GETCHECKSUMS: 
             options.addOption(makeOptionRequired(collectionOption));
             options.addOption(makeOptionRequired(pillarOption));
-            options.addOption(makeOptionRequired(fileOption));
+            options.addOption(makeOptionRequired(fileIdOption));
             break;
         }
         
