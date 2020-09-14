@@ -66,7 +66,7 @@ public class ClientTrainingMain {
                     ca = new GetAction();
                     break;
                 case PUT:
-                    ca = new PutAction();
+                    ca = new PutAction(cmd, BitmagUtils.getPutFileClient());
                     break;
                 case GETFILEIDS: 
                     ca = new GetFileIDsAction(cmd, BitmagUtils.getFileIDsClient());
