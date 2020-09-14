@@ -65,6 +65,7 @@ public class CliOptions {
         Options options = new Options();
         options.addOption(actionOption);
         options.addOption(collectionOption);
+        options.addOption(fileIdOption);
         options.addOption(fileOption);
         options.addOption(pillarOption);
         options.addOption(helpOption);
