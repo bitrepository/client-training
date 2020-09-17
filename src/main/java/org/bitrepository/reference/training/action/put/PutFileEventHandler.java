@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import org.bitrepository.client.eventhandler.EventHandler;
+import org.bitrepository.client.eventhandler.IdentificationCompleteEvent;
 import org.bitrepository.client.eventhandler.OperationEvent;
 import org.bitrepository.protocol.FileExchange;
 import org.slf4j.Logger;
@@ -43,9 +44,13 @@ public class PutFileEventHandler implements EventHandler {
     
     @Override
     public void handleEvent(OperationEvent event) {
+        log.info("Got event {}", event);
         switch(event.getEventType()) {
             case IDENTIFICATION_COMPLETE:
-                uploadFile();
+                IdentificationCompleteEvent ice = (IdentificationCompleteEvent) event;
+                if(ice.getContributorIDs().size() > 0) {
+                    uploadFile();    
+                }
                 break;
             case COMPLETE:
                 log.info("Finished get fileIDs for file '{}'", event.getFileID());
